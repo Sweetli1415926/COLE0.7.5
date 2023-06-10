@@ -28,9 +28,8 @@
     <div style="margin-bottom: 20px"></div>
 
     <t-space>
-      <t-form-item label="培训时间" name="dateTimeSpan"
-        ><t-date-range-picker v-model="DateTimeSpan" :style="{ width: '300px' }" clearable allow-input
-      /></t-form-item>
+      <t-form-item label="培训时间" name="dateTimeSpan"><t-date-range-picker v-model="DateTimeSpan"
+          :style="{ width: '300px' }" clearable allow-input /></t-form-item>
       <t-form-item v-model="courseInfo.company.name" label="对方单位名称" name="companyname">
         <t-input clearable :style="{ width: '300px' }"> </t-input>
       </t-form-item>
@@ -63,23 +62,15 @@
       <t-collapse-panel header="具体开班信息" :borderless="true">
         <t-space>
           <t-form-item label="是否承担师资费" name="isCompanyPayTeacherCost">
-            <t-select
-              v-model="courseInfo.isCompanyPayTeacherCost"
-              :style="{ width: '200px' }"
-              class="demo-select-base"
-              clearable
-            >
+            <t-select v-model="courseInfo.isCompanyPayTeacherCost" :style="{ width: '200px' }" class="demo-select-base"
+              clearable>
               <t-option value="true" label="是"> 是 </t-option>
               <t-option value="false" label="否"> 否 </t-option>
             </t-select>
           </t-form-item>
           <t-form-item label="是否承担住宿费" name="isCompanyPayHote">
-            <t-select
-              v-model="courseInfo.isCompanyPayHote"
-              :style="{ width: '200px' }"
-              class="demo-select-base"
-              clearable
-            >
+            <t-select v-model="courseInfo.isCompanyPayHote" :style="{ width: '200px' }" class="demo-select-base"
+              clearable>
               <t-option value="true" label="是"> 是 </t-option>
               <t-option value="false" label="否"> 否 </t-option>
             </t-select>
@@ -91,8 +82,8 @@
             <t-input-number v-model="traningDay" theme="normal" :style="{ width: '60px' }" />
           </t-form-item>
           <t-form-item label="付费天数" name="payDay">
-            <t-input-number v-model="payDay" theme="normal" :style="{ width: '60px' }" /> </t-form-item
-          ><t-form-item label="合计收费金额" name="TotalIncome">
+            <t-input-number v-model="payDay" theme="normal" :style="{ width: '60px' }" /> </t-form-item><t-form-item
+            label="合计收费金额" name="TotalIncome">
             <t-input-number v-model="courseInfo.totalIncome" theme="normal" :style="{ width: '110px' }" />
           </t-form-item>
         </t-space>
@@ -118,8 +109,6 @@ const traningDay = ref('');
 // 把DateSpan转换为两个日期
 const DateTimeSpan = ref([] as DateRangeValue);
 
-// const courseInfo=
-// const activeForm = ref(0);
 const courseStore = useCourseStore();
 const { courseInfo } = storeToRefs(courseStore);
 const addNewCourseRules: Record<string, FormRule[]> = {
