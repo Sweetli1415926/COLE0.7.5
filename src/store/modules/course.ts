@@ -1,9 +1,10 @@
-import { defineStore } from 'pinia';
+import { defineStore, storeToRefs } from 'pinia';
 
 import { course } from '@/api/model/course';
-import { useManagerStore } from './manager';
-import { storeToRefs } from 'pinia';
 import { request } from '@/utils/request';
+
+import { useManagerStore } from './manager';
+
 export const useCourseStore = defineStore('course', {
   state: () => ({
     courseInfo: {

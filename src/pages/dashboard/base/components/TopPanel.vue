@@ -6,15 +6,22 @@
           <span :style="{ fontSize: `${resizeTime * 28}px` }">¥ {{ formatNumber(TotalIncome) }}</span>
         </div>
         <div class="dashboard-item-left">
-          <div id="moneyContainer" class="dashboard-chart-container"
-            :style="{ width: `${resizeTime * 120}px`, height: '100px', marginTop: '-24px' }"></div>
+          <div
+            id="moneyContainer"
+            class="dashboard-chart-container"
+            :style="{ width: `${resizeTime * 120}px`, height: '100px', marginTop: '-24px' }"
+          ></div>
         </div>
         <template #footer>
           <div class="dashboard-item-bottom">
             <div class="dashboard-item-block">
               同比去年
-              <trend class="dashboard-item-trend" :type="TotalIncomeUpOrDown ? 'down' : 'up'" :is-reverse-color="true"
-                :describe="TotalIncomeUpOrDown" />
+              <trend
+                class="dashboard-item-trend"
+                :type="TotalIncomeUpOrDown ? 'down' : 'up'"
+                :is-reverse-color="true"
+                :describe="TotalIncomeUpOrDown"
+              />
             </div>
             <t-icon name="chevron-right" />
           </div>
@@ -27,15 +34,22 @@
           <span :style="{ fontSize: `${resizeTime * 28}px` }">¥ {{ formatNumber(TotalCost) }}</span>
         </div>
         <div class="dashboard-item-left">
-          <div id="refundContainer" class="dashboard-chart-container"
-            :style="{ width: `${resizeTime * 120}px`, height: '56px', marginTop: '-24px' }"></div>
+          <div
+            id="refundContainer"
+            class="dashboard-chart-container"
+            :style="{ width: `${resizeTime * 120}px`, height: '56px', marginTop: '-24px' }"
+          ></div>
         </div>
         <template #footer>
           <div class="dashboard-item-bottom">
             <div class="dashboard-item-block">
               同比去年
-              <trend class="dashboard-item-trend" :type="TotalCostUpOrDown ? 'down' : 'up'" :is-reverse-color="false"
-                :describe="TotalCostUpOrDown" />
+              <trend
+                class="dashboard-item-trend"
+                :type="TotalCostUpOrDown ? 'down' : 'up'"
+                :is-reverse-color="false"
+                :describe="TotalCostUpOrDown"
+              />
             </div>
             <t-icon name="chevron-right" />
           </div>
@@ -57,8 +71,11 @@
           <div class="dashboard-item-bottom">
             <div class="dashboard-item-block">
               同比去年
-              <trend class="dashboard-item-trend" :type="CountUpOrDown.includes('-') ? 'down' : 'up'"
-                :describe="CountUpOrDown" />
+              <trend
+                class="dashboard-item-trend"
+                :type="CountUpOrDown.includes('-') ? 'down' : 'up'"
+                :describe="CountUpOrDown"
+              />
             </div>
             <t-icon name="chevron-right" />
           </div>
@@ -79,8 +96,11 @@
           <div class="dashboard-item-bottom">
             <div class="dashboard-item-block">
               同比去年
-              <trend class="dashboard-item-trend" :type="StudentCountUpOrDown.includes('-') ? 'down' : 'up'"
-                :describe="StudentCountUpOrDown" />
+              <trend
+                class="dashboard-item-trend"
+                :type="StudentCountUpOrDown.includes('-') ? 'down' : 'up'"
+                :describe="StudentCountUpOrDown"
+              />
             </div>
             <t-icon name="chevron-right" />
           </div>
@@ -251,7 +271,7 @@ watch(
     flex-direction: row;
     align-items: flex-start;
 
-    >span {
+    > span {
       display: inline-block;
       color: var(--td-text-color-primary);
       font-size: var(--td-font-size-headline-medium);
@@ -265,7 +285,7 @@ watch(
     justify-content: space-between;
     align-items: center;
 
-    >.t-icon {
+    > .t-icon {
       cursor: pointer;
       font-size: var(--td-comp-size-xxxs);
     }
@@ -287,7 +307,7 @@ watch(
     top: 0;
     right: 0;
 
-    >span {
+    > span {
       display: inline-flex;
       align-items: center;
       justify-content: center;

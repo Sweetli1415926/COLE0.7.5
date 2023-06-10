@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+
 import { course } from '@/api/model/course';
 import { manager } from '@/api/model/manager';
 import { material } from '@/api/model/material';

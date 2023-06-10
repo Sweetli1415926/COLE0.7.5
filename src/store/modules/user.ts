@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia';
 
+import { LoginUser } from '@/api/model/loginUser';
 import { TOKEN_NAME } from '@/config/global';
 import { store, usePermissionStore } from '@/store';
-import { LoginUser } from '@/api/model/loginUser';
 import { request } from '@/utils/request';
 
 export const useUserStore = defineStore('user', {

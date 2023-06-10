@@ -11,9 +11,25 @@
           <t-step-item title="开具相关票据" content="由财务办公室收费开票" />
         </t-steps>
       </t-card>
-      <div style="margin-bottom: 20px"></div>
-       <!-- <stepOne></stepOne> -->
-      <stepTwo></stepTwo>
+      <div v-show="activeForm === 0">
+        <stepOne></stepOne>
+      </div>
+      <div v-show="activeForm === 1">
+        <stepTwo></stepTwo>
+      </div>
+    </div>
+    <div style="margin-bottom: 60px"></div>
+    <div>
+      <t-space direction="horizontal" :size="300">
+        <div style="margin-right: 160px"></div>
+        <div v-show="activeForm !== 0">
+          <t-button theme="primary" size="large" variant="base" @click="lastStep">上一步</t-button>
+        </div>
+
+        <div v-show="activeForm !== 4">
+          <t-button theme="primary" size="large" variant="outline" @click="nextStep">下一步</t-button>
+        </div>
+      </t-space>
     </div>
   </div>
 </template>
@@ -29,8 +45,14 @@ import { ref } from 'vue';
 
 import stepOne from './components/stepOne.vue';
 import stepTwo from './components/stepTwo.vue';
-const activeForm = ref(0);
 
+const activeForm = ref(0);
+const nextStep = () => {
+  activeForm.value++;
+};
+const lastStep = () => {
+  activeForm.value--;
+};
 // const watchtime = () => {
 //   console.log(DateTimeSpan);
 // };

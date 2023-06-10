@@ -43,15 +43,17 @@
         </template>
         <template #paymentType="{ row }">
           <div v-if="row.paymentType === CONTRACT_PAYMENT_TYPES.PAYMENT" class="payment-col">
-            付款<trend class="dashboard-item-trend" type="up" />
+            付款
+            <trend class="dashboard-item-trend" type="up" />
           </div>
           <div v-if="row.paymentType === CONTRACT_PAYMENT_TYPES.RECEIPT" class="payment-col">
-            收款<trend class="dashboard-item-trend" type="down" />
+            收款
+            <trend class="dashboard-item-trend" type="down" />
           </div>
         </template>
 
         <template #op="slotProps">
-          <a class="t-button-link" @click="handleClickDetail()">详情</a>
+          <a class="t-button-link" @click="handleClickDetail(slotProps)">详情</a>
           <a class="t-button-link" @click="handleClickDelete(slotProps)">删除</a>
         </template>
       </t-table>
@@ -173,6 +175,7 @@ const handleSetupContract = () => {
   router.push('/form/base');
 };
 const handleClickDelete = (row: { rowIndex: any }) => {
+  console.log(row.rowIndex);
   deleteIdx.value = row.rowIndex;
   confirmVisible.value = true;
 };
